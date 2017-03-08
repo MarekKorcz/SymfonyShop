@@ -5,6 +5,6 @@ namespace ShopBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-class MessageController extends Controller
+class SectionController extends Controller
 {
 }
