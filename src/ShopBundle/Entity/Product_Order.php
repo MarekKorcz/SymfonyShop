@@ -27,6 +27,18 @@ class Product_Order
      * @ORM\Column(name="amount", type="integer")
      */
     private $amount;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="productOrders")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     */
+    private $product;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="UserOrder", inversedBy="productOrders")
+     * @ORM\JoinColumn(name="userOrder_id", referencedColumnName="id")
+     */
+    private $userOrder;
 
 
     /**
