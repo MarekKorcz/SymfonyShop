@@ -41,7 +41,22 @@ class Product
      * @ORM\Column(name="price", type="float")
      */
     private $price;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="product", cascade={"All"})
+     */
+    private $comments;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product_Order", mappedBy="product", cascade={"All"})
+     */
+    private $productOrders;
 
     /**
      * Get id
