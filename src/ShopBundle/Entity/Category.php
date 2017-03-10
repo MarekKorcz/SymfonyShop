@@ -27,7 +27,17 @@ class Category
      * @ORM\Column(name="name", type="string", length=30)
      */
     private $name;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Section", inversedBy="comments")
+     * @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     */
+    private $section;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category", cascade={"All"})
+     */
+    private $products;
 
     /**
      * Get id
