@@ -27,6 +27,11 @@ class Section
      * @ORM\Column(name="name", type="string", length=30)
      */
     private $name;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="section", cascade={"All"})
+     */
+    private $comments;
 
 
     /**
