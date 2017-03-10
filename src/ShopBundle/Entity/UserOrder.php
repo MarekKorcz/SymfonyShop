@@ -34,7 +34,17 @@ class UserOrder
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="userOrders")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Product_Order", mappedBy="userOrder")
+     */
+    private $productOrders;
 
     /**
      * Get id
