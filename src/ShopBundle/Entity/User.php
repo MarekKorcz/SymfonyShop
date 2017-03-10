@@ -21,6 +21,16 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="UserOrder", mappedBy="user", cascade={"All"})
+     */
+    private $userOrders;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="user", cascade={"All"})
+     */
+    private $comments;
 
 
     /**
