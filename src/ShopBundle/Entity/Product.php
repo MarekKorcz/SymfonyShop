@@ -136,4 +136,9 @@ class Product
     {
         return $this->price;
     }
+    
+    public function getCategory(){
+        
+        return $this->category;
+    }
 }
