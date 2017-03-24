@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block body %}
+    {% for product in products %}
+        {{ product.id }}<br>
+        {{ product.category.id }}<br>
+        {{ product.name }}<br>
+        {{ product.description }}<br>
+        {{ product.price }}<br><br>
+    {% endfor %}
+{% endblock %}
