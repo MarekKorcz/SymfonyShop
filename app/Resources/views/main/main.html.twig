@@ -3,11 +3,20 @@
 {% block title %}Main Page{% endblock %}
 
 {% block body %}
-    {% for product in products %}
-        {{ product.id }}<br>
-        {{ product.category.id }}<br>
-        {{ product.name }}<br>
-        {{ product.description }}<br>
-        {{ product.price }}<br><br>
-    {% endfor %}
+    <div class="container"> 
+        <h1>Main Page</h1>
+        
+        <h3>List of products</h3>
+        {% for product in products %}
+            {{ product.name }}<br>
+            {{ product.description }}<br>
+            {{ product.price }}<br><br>
+            <a href="{{ path("product_show", {"id":product.id}) }}">
+                <button class="btn btn-primary">
+                    <strong>Show product</strong>
+                </button>
+            </a>
+            <br><br>
+        {% endfor %}
+    </div>
 {% endblock %}
