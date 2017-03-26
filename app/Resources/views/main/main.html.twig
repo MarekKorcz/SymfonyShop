@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container"> 
         
-        {% if app.user %}
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <div>
                 <a href="{{ path("fos_user_security_logout") }}">
                     <button class="btn btn-warning">
