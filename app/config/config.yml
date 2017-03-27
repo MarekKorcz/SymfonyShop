@@ -31,6 +31,7 @@ framework:
         handler_id: ~
     fragments: ~
     http_method_override: true
+    translator: { fallbacks: ["%locale%"] }
 
 # Twig Configuration
 twig:
@@ -78,3 +79,11 @@ fos_user:
 services:
     fos_user.doctrine_registry:
         alias: doctrine
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+
+        # enable the SonataAdminBundle block
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
