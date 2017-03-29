@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new ShopBundle\ShopBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new UserBundle\UserBundle(),
-            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
