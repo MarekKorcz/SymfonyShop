@@ -1,0 +1,11 @@
+services:
+    app.admin.post:
+        class: ShopBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Category" }
+        arguments:
+            - ~
+            - ShopBundle\Entity\Category
+            - ~
+        calls:
+            - [ setTranslationDomain, [ShopBundle]]
