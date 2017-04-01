@@ -3,6 +3,7 @@
 namespace ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Section
@@ -31,7 +32,7 @@ class Section
     /**
      * @ORM\OneToMany(targetEntity="Category", mappedBy="section", cascade={"All"})
      */
-    private $comments;
+    private $categories;
 
 
     /**
@@ -65,5 +66,20 @@ class Section
     public function getName()
     {
         return $this->name;
+    }
+    
+    public function getCategories(){
+        
+        return $this->categories;
+    }
+    
+    public function __toString(){
+
+        return $this->getCategories() ? $this->getCategories() : '';
+    }
+    
+    public function __construct(){
+        
+        $this->categories = new ArrayCollection();
     }
 }
