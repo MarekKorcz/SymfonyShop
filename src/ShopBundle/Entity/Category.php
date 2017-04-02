@@ -30,7 +30,7 @@ class Category
     private $name;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Section", inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="Section", inversedBy="categories")
      * @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      */
     private $section;
