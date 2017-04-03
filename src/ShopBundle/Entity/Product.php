@@ -3,6 +3,7 @@
 namespace ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -140,5 +141,21 @@ class Product
     public function getCategory(){
         
         return $this->category;
+    }
+    
+    public function getComments(){
+        
+        return $this->comments;
+    }
+    
+    public function getOrder(){
+        
+        return $this->productOrders;
+    }
+    
+    public function __construct(){
+        
+        $this->comments = new ArrayCollection();
+        $this->productOrders = new ArrayCollection();
     }
 }
