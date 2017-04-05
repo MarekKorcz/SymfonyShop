@@ -75,7 +75,7 @@ class Section
     
     public function __toString(){
 
-        return $this->getCategories() ? $this->getCategories() : '';
+        return $this->getName();
     }
     
     public function __construct(){

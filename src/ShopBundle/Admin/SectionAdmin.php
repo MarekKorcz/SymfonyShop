@@ -17,9 +17,6 @@ class SectionAdmin extends AbstractAdmin
             ->add('name', 'text', array(
                 'label' => 'Section name'
             ))
-            ->add('categories', 'entity', array(
-                'class' => 'ShopBundle\Entity\Category'
-            ))
         ;
     }
 
