@@ -20,9 +20,6 @@ class CategoryAdmin extends AbstractAdmin
             ->add('section', 'entity', array(
                 'class' => 'ShopBundle\Entity\Section'
             ))
-            ->add('products', 'entity', array(
-                'class' => 'ShopBundle\Entity\Product'
-            ))
         ;
     }
 

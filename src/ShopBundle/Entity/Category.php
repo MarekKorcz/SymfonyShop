@@ -2,6 +2,8 @@
 
 namespace ShopBundle\Entity;
 
+//use ShopBundle\Entity\Section;
+
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -92,7 +94,7 @@ class Category
     
     public function __toString(){
 
-        return $this->getProducts() ? $this->getProducts() : '';
+        return $this->getName();
     }
     
     public function __construct(){
