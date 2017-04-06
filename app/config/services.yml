@@ -8,6 +8,12 @@ services:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
     
+    admin.user:
+        class: ShopBundle\Admin\UserAdmin
+        arguments: [~, ShopBundle\Entity\User, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, label: User }
+    
     admin.section:
         class: ShopBundle\Admin\SectionAdmin
         arguments: [~, ShopBundle\Entity\Section, ~]

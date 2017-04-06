@@ -5,6 +5,8 @@ namespace ShopBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * User
  *
@@ -21,6 +23,11 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    
+    /**
+     * @var string
+     */
+    protected $username;
     
     /**
      * @ORM\OneToMany(targetEntity="UserOrder", mappedBy="user", cascade={"All"})
@@ -43,9 +50,34 @@ class User extends BaseUser
         return $this->id;
     }
     
+    /**
+     * {@inheritdoc}
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+    
+    public function getUserOrders(){
+        
+        return $this->userOrders;
+    }
+    
+    public function getComments(){
+        
+        return $this->comments;
+    }
+    
+    public function __toString(){
+        
+        return $this->getUsername();
+    }
+    
     public function __construct(){
 
-    parent:: __construct();
-
+        parent:: __construct();
+        
+        $this->userOrders = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 }
