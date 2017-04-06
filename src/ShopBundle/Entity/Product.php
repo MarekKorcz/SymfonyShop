@@ -138,6 +138,13 @@ class Product
         return $this->price;
     }
     
+    public function setCategory($category) {
+        
+        $this->category = $category;
+        
+        return $this;
+    }
+    
     public function getCategory(){
         
         return $this->category;
@@ -151,6 +158,11 @@ class Product
     public function getOrder(){
         
         return $this->productOrders;
+    }
+    
+    public function __toString(){
+        
+        return $this->getName();
     }
     
     public function __construct(){

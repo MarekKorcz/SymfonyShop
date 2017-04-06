@@ -21,16 +21,10 @@ class ProductAdmin extends AbstractAdmin
                 'label' => 'Product description'
             ))
             ->add('price', 'number', array(
-                'label' => 'Product description'
+                'label' => 'Price'
             ))
             ->add('category', 'entity', array(
                 'class' => 'ShopBundle\Entity\Category'
-            ))
-            ->add('comments', 'entity', array(
-                'class' => 'ShopBundle\Entity\Comment'
-            ))
-            ->add('order', 'entity', array(
-                'class' => 'ShopBundle\Entity\Product_Order'
             ))
         ;
     }
@@ -43,8 +37,6 @@ class ProductAdmin extends AbstractAdmin
             ->add('description')
             ->add('price')
             ->add('category')
-            ->add('comments')
-            ->add('order')
        ;
     }
 
@@ -54,10 +46,8 @@ class ProductAdmin extends AbstractAdmin
         $listMapper
             ->addIdentifier('name')
             ->add('description')
-            ->add('price')
             ->add('category')
-            ->add('comments')
-            ->add('order')
+            ->add('price')
        ;
     }
 
@@ -69,8 +59,6 @@ class ProductAdmin extends AbstractAdmin
            ->add('description')
            ->add('price')
            ->add('category')
-           ->add('comments')
-           ->add('order')
        ;
     }
 }
