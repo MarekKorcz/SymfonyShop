@@ -87,3 +87,17 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+
+sonata_admin:
+    dashboard:
+        groups:
+            demo.admin.main:
+                label:              Admin
+                label_catalogue:    ShopBundle
+                icon:               <i class="fa fa-database"></i>
+                items:
+                    - admin.user
+                    - admin.section
+                    - admin.category
+                    - admin.product
+                    
