@@ -14,12 +14,17 @@ class CategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text', array(
-                'label' => 'Category name'
-            ))
-            ->add('section', 'entity', array(
-                'class' => 'ShopBundle\Entity\Section'
-            ))
+            ->with('Category', array('class' => 'col-md-6'))
+                ->add('name', 'text', array(
+                    'label' => 'Name:'
+                ))
+            ->end()
+            ->with('Section', array('class' => 'col-md-6'))
+                ->add('section', 'entity', array(
+                    'class' => 'ShopBundle\Entity\Section',
+                    'label' => 'Name (pick one):'
+                ))
+            ->end()
         ;
     }
 

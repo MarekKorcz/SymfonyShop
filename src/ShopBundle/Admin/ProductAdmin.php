@@ -14,18 +14,29 @@ class ProductAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text', array(
-                'label' => 'Product name'
-            ))
-            ->add('description', 'text', array(
-                'label' => 'Product description'
-            ))
-            ->add('price', 'number', array(
-                'label' => 'Price'
-            ))
-            ->add('category', 'entity', array(
-                'class' => 'ShopBundle\Entity\Category'
-            ))
+            ->tab('General')
+                ->with('Product info', array('class' => 'col-md-6'))
+                    ->add('name', 'text', array(
+                        'label' => 'Name:'
+                    ))
+                    ->add('description', 'textarea', array(
+                        'label' => 'Description:'
+                    ))
+                ->end()
+                ->with('Price', array('class' => 'col-md-3'))
+                    ->add('price', 'number', array(
+                        'label' => 'Price:'
+                    ))
+                ->end()
+                ->with('Category', array('class' => 'col-md-3'))
+                    ->add('category', 'entity', array(
+                        'class' => 'ShopBundle\Entity\Category',
+                        'label' => 'Name (pick one):'
+                    ))
+                ->end()
+            ->end()
+            ->tab('Images')
+            ->end()
         ;
     }
 

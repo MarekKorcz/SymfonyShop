@@ -14,9 +14,11 @@ class SectionAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text', array(
-                'label' => 'Section name'
-            ))
+            ->with('Section', array('class' => 'col-md-6'))
+                ->add('name', 'text', array(
+                    'label' => 'Name:'
+                ))
+            ->end()
         ;
     }
 
