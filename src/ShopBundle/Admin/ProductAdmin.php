@@ -48,6 +48,13 @@ class ProductAdmin extends AbstractAdmin
             ->add('description')
             ->add('category')
             ->add('price')
+            ->add('_action', null, array(
+                'actions' => array(
+                    'show'      => array(),
+                    'edit'      => array(),
+                    'delete'    => array(),
+                )
+            ))
        ;
     }
 

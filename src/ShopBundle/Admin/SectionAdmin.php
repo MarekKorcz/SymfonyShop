@@ -35,6 +35,13 @@ class SectionAdmin extends AbstractAdmin
         $listMapper
             ->addIdentifier('name')
             ->add('categories')
+            ->add('_action', null, array(
+                'actions' => array(
+                    'show'      => array(),
+                    'edit'      => array(),
+                    'delete'    => array(),
+                )
+            ))
        ;
     }
 

@@ -40,6 +40,13 @@ class CategoryAdmin extends AbstractAdmin
             ->addIdentifier('name')
             ->add('section')
             ->add('products')
+            ->add('_action', null, array(
+                'actions' => array(
+                    'show'      => array(),
+                    'edit'      => array(),
+                    'delete'    => array(),
+                )
+            ))
        ;
     }
 
