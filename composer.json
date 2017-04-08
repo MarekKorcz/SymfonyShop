@@ -21,6 +21,7 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "sonata-project/admin-bundle": "^3.15",
         "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+        "sonata-project/easy-extends-bundle": "^2.1",
         "symfony/assetic-bundle": "~2.3",
         "symfony/monolog-bundle": "^3.0.2",
         "symfony/swiftmailer-bundle": "~2.3,>=2.3.10",
