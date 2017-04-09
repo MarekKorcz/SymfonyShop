@@ -87,6 +87,10 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+            
+        sonata.user.block.menu:
+        sonata.user.block.account:
+        sonata.block.service.text:
 
 sonata_admin:
     dashboard:
@@ -100,4 +104,7 @@ sonata_admin:
                     - admin.section
                     - admin.category
                     - admin.product
-                    
+
+sonata_user:
+    security_acl: true
+    manager_type: orm
